@@ -18,7 +18,6 @@ if (navClose) {
 }
 
 // Remove Menu Mobile
-
 const navLink = document.querySelectorAll('.nav__link');
 
 const linkAction = () => {
@@ -26,3 +25,6 @@ const linkAction = () => {
   navMenu.classList.remove('show-menu');
 };
 navLink.forEach(n => n.addEventListener('click', linkAction));
+
+// Add Blur Header
+
