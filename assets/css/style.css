@@ -162,7 +162,16 @@ button {
 }
   
   /* Navigation for mobile devices */
-  
+
+/* @media screen and (max-width: 100px){
+    .favorite__container{
+    padding-top: 3.5rem;
+    grid-template-columns: repeat(1,1fr);
+    gap: 4rem 1.5rem;
+  }
+    
+} */
+
 @media screen and (max-width: 1150px){
     .nav__menu {
         position: fixed;
@@ -465,6 +474,14 @@ button {
 .favorite__price{
     font-size: var(--normal-font-size);
     font-family: var(--second-font);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 1.3rem;
+    padding-left: 1rem;
+    
+ 
 }
 
 .favorite__button{
@@ -485,6 +502,7 @@ button {
     color: var(--font-bold);
     font-style: italic;
     cursor: pointer;
+    /* position: absolute; */
 }
   /*=============== VISIT ===============*/
   
