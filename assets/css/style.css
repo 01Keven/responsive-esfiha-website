@@ -677,10 +677,82 @@ button {
   
   /*=============== BREAKPOINTS ===============*/
   /* For small devices */
-  
+@media screen and (max-width: 340px){
+    .container{
+        margin-inline: 1rem;
+    }
+
+    .home__title{
+        font-size: 2.5rem;
+    }
+
+    .home__footer{
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .new__content{
+        grid-template-columns: 200px;
+        justify-content: center;
+    }
+
+    .new__card{
+        flex-direction: column;
+        row-gap: 1rem;
+        text-align: center;
+    }
+
+    .new__card:nth-child(2) img{
+        order: initial;
+    }
+
+    .favorite__container{
+        grid-template-columns: 180px;
+        justify-content: center;
+    }
+
+    .footer__content{
+        grid-template-columns: max-content;
+    }
+}
+
   
   /* For medium devices */
-  
+@media screen and (min-width: 578px) {
+    .nav__menu{
+        width: 50%;
+    }
+
+    .home__container,
+    .new__content,
+    .about__container,
+    .visit__container{
+        grid-template-columns: 350px;
+        justify-content: center;
+    }
+
+    .favorite__container{
+        grid-template-columns: repeat(2,180px);
+        justify-content: center;
+    }
+
+    .footer__content{
+        grid-template-columns: repeat(3, max-content);
+    }
+}
+
+@media screen and (min-width: 768px){
+    .home{
+        padding-top: 3rem;
+    }
+
+    .home__container{
+        grid-template-columns: repeat(2,350px);
+        align-items: center;
+    }
+
+    
+}
   
   /* For large devices */
 

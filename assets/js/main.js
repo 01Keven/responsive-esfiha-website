@@ -66,3 +66,5 @@ const scrollActive = () => {
   });
 };
 window.addEventListener("scroll", scrollActive);
+
+// Scroll Sections Active 
