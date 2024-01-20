@@ -67,4 +67,31 @@ const scrollActive = () => {
 };
 window.addEventListener("scroll", scrollActive);
 
-// Scroll Sections Active 
+// Scroll Reveal Animation
+
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '40px',
+  opacity: 1,
+  scale: 1.1,
+  duration: 2500,
+  delay: 300,
+  // reset: true,
+})
+
+sr.reveal(`.home__data, .about__img, .about__data, .visit__data`)
+// sr.reveal(`#new-data1`, {opacity: 0, origin: 'top'})
+// sr.reveal(`#new-data2`, {opacity: 0, origin: 'bottom'})
+// sr.reveal(`#new-data3`, {opacity: 0, origin: 'left'})
+
+sr.reveal(`.home__image, .about__trigo`, {rotate: {z: -15}})
+sr.reveal(`.home__chapeu`, {rotate: {z: 15}})
+sr.reveal(`.home__footer`, {scale: 1, origin: 'bottom'})
+
+sr.reveal(`.new__card:nth-child(1) img`, {rotate: {z: -30}, distance: 0})
+sr.reveal(`.new__card:nth-child(2) img`, {rotate: {z: -30}, distance: 0, delay: 600})
+sr.reveal(`.new__card:nth-child(3) img`, {rotate: {z: -30}, distance: 0, delay: 900})
+
+sr.reveal(`.favorite__card`, {interval: 200, opacity: 0, distance: 0, origin: 'bottom'})
+sr.reveal(`.footer__container, .about__esfiha`, {scale: 1})
+
