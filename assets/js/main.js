@@ -96,3 +96,5 @@ sr.reveal(`.new__card:nth-child(3) img`, {rotate: {z: -30}, distance: 0, delay: 
 sr.reveal(`.favorite__card`, {interval: 200, opacity: 0, distance: 0, origin: 'bottom'})
 sr.reveal(`.footer__container, .about__esfiha`, {scale: 1})
 
+// Esfiha Window
+

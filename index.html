@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- MODELS PIZZA -->
+    <div class="models">
+
+        <!-- List of Esfihas
+        <div class="pizza__item">
+            <a href="">
+                <div class="div esfiha__item__img">
+                    <img src="" alt="">
+                </div>
+                <div class="div esfiha__item__add">+</div>
+            </a>
+            <div class="pizza__item__price">R$ --</div>
+            <div class="pizza__item__name">--</div>
+            <div class="pizza__item__desc">--</div>
+        </div> -->
+
+        <!-- Esfiha in the Cart -->
+        <div class="cart__item">
+            <img src="" />
+            <div class="cart__item__nome">--</div>
+            <div class="cart__item__qtarea">
+                <button>-</button>
+                <div class="cart__item__qt">1</div>
+                <button>+</button>
+            </div>
+        </div>
+
+    </div>
+
+
     <!-- HEADER -->
     <header class="header" id="header">
         <nav class="nav container">
@@ -57,6 +87,7 @@
                 <div class="nav__icons" id="nav-icons">
                     <ul class="list__nav__icons">
                         <li class="nav__cart">
+                            <span>1</span>
                             <i class="ri-shopping-cart-line"></i>
                         </li>
                         <li class="nav__toggle" id="nav-toggle">
@@ -186,7 +217,7 @@
                 <!-- FRANGO 
                 Recheio de frango desfiado temperado, tomate, cebola.-->
                 <article class="favorite__card">
-                    <img src="assets/img/esfiha-frango.png" alt="image" class="favorite__img hoverable-image">
+                    <a href=""><img src="assets/img/esfiha-frango.png" alt="image" class="favorite__img hoverable-image"></a>
 
                     <div class="favorite__data">
                         <h2 class="favorite__title">Frango</h2>
@@ -202,7 +233,7 @@
                 <!-- CARNE MUSSARELA 
                 Carne temperada com limão, mussarela, tomate, tahine, cebola e tempero especial.-->
                 <article class="favorite__card">
-                    <img src="assets/img/esfiha-carne-mussarela.png" alt="image" class="favorite__img hoverable-image">
+                    <a href=""><img src="assets/img/esfiha-carne-mussarela.png" alt="image" class="favorite__img hoverable-image"></a>
 
                     <div class="favorite__data">
                         <h2 class="favorite__title">Carne </h2>
@@ -218,7 +249,7 @@
                 <!-- CALABRESA MUSSARELA 
                 A fusão perfeita entre a picância da calabresa, a cremosidade da mussarela e tempero especial.-->
                 <article class="favorite__card">
-                    <img src="assets/img/esfiha-calabresa-mussarela.png" alt="image" class="favorite__img hoverable-image">
+                    <a href=""><img src="assets/img/esfiha-calabresa-mussarela.png" alt="image" class="favorite__img hoverable-image"></a>
 
                     <div class="favorite__data">
                         <h2 class="favorite__title">Calabresa</h2>
@@ -234,7 +265,7 @@
                 <!-- QUEIJO 
                 Queijo minas fresco e uma pitada de salsa picada.-->
                 <article class="favorite__card">
-                    <img src="assets/img/esfiha-queijo.png" alt="image" class="favorite__img hoverable-image">
+                    <a href=""><img src="assets/img/esfiha-queijo.png" alt="image" class="favorite__img hoverable-image"></a>
 
                     <div class="favorite__data">
                         <h2 class="favorite__title">Queijo</h2>
@@ -250,7 +281,7 @@
                 <!-- QUATRO QUEIJOS 
                 Massa folhada perfeitamente saborosa, recheada com quatro queijos e pra finalizar um toque de Philadelphia-->
                 <article class="favorite__card">
-                    <img src="assets/img/esfiha-quatro-queijos.png" alt="image" class="favorite__img hoverable-image">
+                    <a href=""><img src="assets/img/esfiha-quatro-queijos.png" alt="image" class="favorite__img hoverable-image"></a>
 
                     <div class="favorite__data">
                         <h2 class="favorite__title">4 Queijos Prime</h2>
@@ -266,7 +297,7 @@
                 <!-- Alpino 
                 Uma deliciosa união entre a crocância da massa folhada e o sabor irresistível do chocolate Alpino.-->
                 <article class="favorite__card">
-                    <img src="assets/img/esfiha-alpino.png" alt="image" class="favorite__img hoverable-image">
+                    <a href=""><img src="assets/img/esfiha-alpino.png" alt="image" class="favorite__img hoverable-image"></a>
 
                     <div class="favorite__data">
                         <h2 class="favorite__title">Alpino Cremoso</h2>
@@ -302,6 +333,68 @@
             </div>
         </section>
     </main>
+
+    <!-- Aside Car -->
+    <aside>
+        <div class="cart__area">
+            <div class="menu__closer">
+                <i class="ri-close-line"></i>
+            </div>
+
+            <h1 class="car__title">Suas Esfihas</h1>
+            <div class="cart"></div>
+            <div class="cart__details">
+                <div class="cart__totalitem subtotal">
+                    <span class="car__subtotal">Subtotal</span>
+                    <span class="car__price">R$ --</span>
+                </div>
+
+                <div class="cart__totalitem desconto">
+                    <span class="car__subtotal">Desconto</span>
+                    <span class="car__price">R$ --</span>
+                </div>
+
+                <div class="cart__totalitem big">
+                    <span class="car__subtotal">Total</span>
+                    <span class="car__price">R$ --</span>
+                </div>
+
+                <div class="cart__finish">Finalizar A Compra</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Esfiha Window Area -->
+    <div class="esfiha__window__area">
+        <div class="esfiha__window__body">    
+            <div class="window__back">Voltar</div>
+            <div class="window__big">
+                <img src="" class="window__img__big"/>
+            </div>
+
+            <div class="window__info">
+                <h1 class="window__info__title">--</h1>
+                <div class="window__info__description">--</div>
+                <div class="window__info__sinzarea">
+                    <input type="text" class="window__info__details">
+                </div>
+
+                <div class="esfiha__window__price area">
+                    <div class="esfiha__info__sector">Preço</div>
+                    <div class="esfiha__info__price">
+                        <div class="esfiha__info__actualPrice">R$ --</div>
+                        <div class="esfiha__info__qtarea">
+                            <button>-</button>
+                            <div class="esfiha__info__qt">1</div>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="esfiha__info__addButton">Adicionar ao carrinho</div>
+                <div class="esfiha__info__cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
