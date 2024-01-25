@@ -1,4 +1,4 @@
-let EsfihaJson = [
+let EsfihasJson = [
     {
       id: 1,
       name: 'Frango',
@@ -37,9 +37,9 @@ let EsfihaJson = [
     {
       id: 6,
       name: 'Alpino Cremoso',
-      img: 'assets/img/esfiha-frango.png',
+      img: 'assets/img/esfiha-alpino.png',
       price: 6.99,
-      description: 'Molho de tomate, camada dupla de mussarela e orégano'
-    },
+      description: 'Massa folhada, chocolate Alpino cremoso e pedaços de chocolate.'
+    }
     
   ];

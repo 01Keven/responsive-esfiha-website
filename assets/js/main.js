@@ -98,8 +98,38 @@ sr.reveal(`.footer__container, .about__esfiha`, {scale: 1})
 
 // Click Esfiha
 
-let esfihaImg = document.querySelector(`.favorite__card a, favorite__subtitle a`).addEventListener('click', (e) => {
-  e.preventDefault()
-  console.log("clicou na esfiha");
-})
+// Defina a função preencherCampos fora do escopo do clique
+function preencherCampos(esfiha) {
+  document.querySelector('.window__img__big').src = esfiha.img;
+  document.querySelector('.window__info__title').textContent = esfiha.name;
+  document.querySelector('.window__info__description').textContent = esfiha.description;
+  document.querySelector('.esfiha__info__actualPrice').textContent = 'R$ ' + esfiha.price.toFixed(2);
+}
+
+// Obtenha todas as tags 'a' dentro da section com id 'favorite'
+let esfihaImg = document.querySelectorAll('#favorite a');
+
+// Adicione o evento de clique a cada uma delas
+esfihaImg.forEach((link, index) => {
+  link.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log("Clicou na esfiha");
+
+      // abrir janela modal
+      document.querySelector('.esfiha__window__area').style.display = 'flex';
+
+      // preenchimento dos dados
+      preencherCampos(EsfihasJson[index]);
+  });
+});
+
+// fechar modal
+document.querySelector('.esfiha__info__cancelButton').addEventListener('click', () => {
+  document.querySelector('.esfiha__window__area').style.display = 'none';
+});
+
+// voltar modal
+document.querySelector('.window__back').addEventListener('click', () => {
+  document.querySelector('.esfiha__window__area').style.display = 'none';
+});
 
