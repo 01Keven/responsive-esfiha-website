@@ -96,40 +96,89 @@ sr.reveal(`.new__card:nth-child(3) img`, {rotate: {z: -30}, distance: 0, delay: 
 sr.reveal(`.favorite__card`, {interval: 200, opacity: 0, distance: 0, origin: 'bottom'})
 sr.reveal(`.footer__container, .about__esfiha`, {scale: 1})
 
+
 // Click Esfiha
 
-// Defina a função preencherCampos fora do escopo do clique
-function preencherCampos(esfiha) {
+// modalkey global
+quantEsfihas = 1
+
+// Função para preencher os campos da janela modal
+const preencherCampos = (esfiha) => {
+  const modal = document.querySelector('.esfiha__window__area');
   document.querySelector('.window__img__big').src = esfiha.img;
   document.querySelector('.window__info__title').textContent = esfiha.name;
   document.querySelector('.window__info__description').textContent = esfiha.description;
-  document.querySelector('.esfiha__info__actualPrice').textContent = 'R$ ' + esfiha.price.toFixed(2);
-}
+  document.querySelector('.esfiha__info__actualPrice').textContent = `R$ ${esfiha.price.toFixed(2)}`;
 
-// Obtenha todas as tags 'a' dentro da section com id 'favorite'
-let esfihaImg = document.querySelectorAll('#favorite a');
+    // Inicializar a quantidade com 1 sempre que abrir a modal
+    quantEsfihas = 1;
+    document.querySelector('.esfiha__info__qt').innerHTML = quantEsfihas;
+};
 
-// Adicione o evento de clique a cada uma delas
-esfihaImg.forEach((link, index) => {
+// Função para mostrar a janela modal com fade
+const mostrarModal = () => {
+  const modal = document.querySelector('.esfiha__window__area');
+  modal.style.display = 'flex';
+  setTimeout(() => modal.classList.add('visible'), 10);
+};
+
+// Função para esconder a janela modal com fade
+const esconderModal = () => {
+  const modal = document.querySelector('.esfiha__window__area');
+  modal.classList.remove('visible');
+  setTimeout(() => modal.style.display = 'none', 500); // Tempo de espera correspondente à duração da transição
+};
+
+// Adicionando o evento de clique a cada link de esfiha
+const adicionarEventoEsfiha = (link, index) => {
   link.addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log("Clicou na esfiha");
+    e.preventDefault();
+    console.log("Clicou na esfiha");
 
-      // abrir janela modal
-      document.querySelector('.esfiha__window__area').style.display = 'flex';
+    // Abrir janela modal com animação de fade
+    mostrarModal();
 
-      // preenchimento dos dados
-      preencherCampos(EsfihasJson[index]);
+    // Preencher os dados da esfiha
+    preencherCampos(EsfihasJson[index]);
+
   });
-});
+};
 
-// fechar modal
-document.querySelector('.esfiha__info__cancelButton').addEventListener('click', () => {
-  document.querySelector('.esfiha__window__area').style.display = 'none';
-});
+const mudarQuantidade = () => {
+  const maisButton = document.querySelector('.esfiha__button__mais');
+  const menosButton = document.querySelector('.esfiha__button__menos');
+  const qtElement = document.querySelector('.esfiha__info__qt');
 
-// voltar modal
-document.querySelector('.window__back').addEventListener('click', () => {
-  document.querySelector('.esfiha__window__area').style.display = 'none';
-});
+  if (maisButton && menosButton && qtElement) {
+    maisButton.addEventListener('click', () => {
+      quantEsfihas++;
+      qtElement.innerHTML = quantEsfihas;
+    });
 
+    menosButton.addEventListener('click', () => {
+      if (quantEsfihas > 1) {
+        quantEsfihas--;
+        qtElement.innerHTML = quantEsfihas;
+      }
+    });
+  }
+};
+
+
+
+
+
+
+
+// Obtendo todas as tags 'a' dentro da section com id 'favorite'
+const esfihaImg = document.querySelectorAll('#favorite a');
+
+// Adicionando o evento de clique a cada uma delas usando a arrow function
+esfihaImg.forEach((link, index) => adicionarEventoEsfiha(link, index));
+
+
+// Fechar e voltar modal
+document.querySelector('.esfiha__info__cancelButton').addEventListener('click', esconderModal);
+document.querySelector('.window__back').addEventListener('click', esconderModal);
+
+mudarQuantidade()

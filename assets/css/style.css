@@ -301,16 +301,29 @@ aside.show {
     right:0;
     background-color: hsla(0, 0%, 0%, 0.694);
     display:none;
-    transition: all ease .10s;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: auto;
     z-index: 101;
 }
 
+
+.esfiha__window__area.visible{
+    opacity: 1;
+    display: flex;
+}
+
+/* .esfiha__window__area.hidden{
+    opacity: 0;
+    display: none;
+} */
+
 .esfiha__window__body {
     width:900px;
-    background-color: hsla(0, 0%, 26%, 0.365);
+    background-color: hsla(0, 0%, 25%, 0.365);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius:2px;
@@ -338,7 +351,7 @@ aside.show {
     align-items: center;
     position: relative; /* Adicionado para posicionar o .window__big--back */
     background-color: #00000055; /* Cor do fundo preto */
-    opacity: 0.7; /* Ajuste a opacidade conforme necessário */
+    /* opacity: 0.7;  */
     z-index: -1; /* Envia para trás para estar atrás da imagem */
 }
 
@@ -422,8 +435,12 @@ aside.show {
     cursor: pointer;
     bottom: 1.25rem;
     width: 35px;
-    /* border-radius: 2px; */
+    /* border-radius: 100px; */
     background-color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+}
+.esfiha__info__qtarea button:hover {
+    background-color: var(--first-color-alt);
 }
 
 .esfiha__info__qt {
@@ -439,22 +456,29 @@ aside.show {
 .esfiha__info__addButton {
     margin-top:30px;
     padding:20px 30px;
-    border-radius:20px;
-    background-color:#48d05f;
-    color:#FFF;
+    /* border-radius:20px */
+    background-color: var(--first-color);
+    color: var(--black-color);
     display:inline-block;
     cursor:pointer;
     margin-right:30px;
+    font-family: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    
 }
 
 .esfiha__info__addButton:hover {
-    background-color:#32a345;
+    background-color: var(--first-color-alt);
 
 }
 
 .esfiha__info__cancelButton {
     display:inline-block;
     cursor:pointer;
+}
+
+.esfiha__info__cancelButton:hover {
+    color: white;
 }
 
 .window__back{
@@ -472,6 +496,10 @@ aside.show {
     color: rgba(255, 255, 255, 0.365);
     
 
+}
+
+.window__back:hover{
+    color: rgb(255, 255, 255);
 }
 
 .esfiha__window__price{
@@ -494,12 +522,24 @@ aside.show {
     margin-bottom: .2rem;
 }
 
+
+
 .window__info__details{
     width: 72%;
     padding: 50px;
     padding: 0.5rem;
     box-sizing: border-box;
     padding-bottom: 30px;
+    outline: none;
+    border: 2px solid rgb(55, 55, 55);
+    background-color: rgb(237, 237, 237);
+    border-radius: 4px;
+    font-family: var(--body-font);
+    /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); */
+}
+
+.window__info__details:focus{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.326);
 }
 
 

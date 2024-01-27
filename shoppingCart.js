@@ -32,7 +32,7 @@ let EsfihasJson = [
       name: '4 Queijos Prime',
       img: 'assets/img/esfiha-quatro-queijos.png',
       price: 4.99,
-      description: 'Massa folhada, mussarela, gorgonzola, parmesão e Philadelphia'
+      description: 'Massa folhada, mussarela, gorgonzola, parmesão e Philadelphia.'
     },
     {
       id: 6,
